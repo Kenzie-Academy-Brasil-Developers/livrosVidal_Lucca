@@ -6,3 +6,7 @@ export interface Book {
     createdAt: Date;
     updatedAt: Date;
   }
+
+  export interface IssuesResponse {
+    issues: { message: string }[];
+  }
