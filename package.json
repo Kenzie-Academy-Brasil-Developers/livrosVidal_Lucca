@@ -1,7 +1,7 @@
 {
   "name": "m4-template-entrega3",
   "version": "1.0.0",
-  "description": "",
+  "description": "Ao clonar, rode o comando npm install para instalar as dependências",
   "main": "index.js",
   "scripts": {
     "dev": "tsnd --respawn src/server.ts",
@@ -11,13 +11,17 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/express": "^4.17.18",
+    "@types/express": "^4.17.21",
     "supertest": "^6.3.3",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.2.2",
+    "typescript": "^5.3.3",
     "vitest": "^0.34.5"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "@types/node": "^20.11.5",
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "helmet": "^7.1.0",
+    "zod": "^3.22.4"
   }
 }

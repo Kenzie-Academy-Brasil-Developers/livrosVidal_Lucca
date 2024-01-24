@@ -50,4 +50,24 @@ describe("update book", () => {
     errorDefaultExpects(data);
     expect(data.error).toEqual("Book already registered.");
   });
+
+  it("should throw error when some invalid value type are sent", async () => {
+    const data = await request
+      .patch("/books/1")
+      .send({
+        name: 123,
+        pages: "Otavio",
+        category: "Example",
+      })
+      .expect(400)
+      .then((response) => response.body);
+
+    expect(data.issues).toHaveLength(2);
+
+    expect(data.issues[0]).toBeTypeOf("object");
+    expect(data.issues[0].message).toBe("Expected string, received number");
+
+    expect(data.issues[1]).toBeTypeOf("object");
+    expect(data.issues[1].message).toBe("Expected number, received string");
+  });
 });
